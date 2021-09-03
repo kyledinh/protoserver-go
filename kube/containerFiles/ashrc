@@ -1,0 +1,7 @@
+# Courtesy script to initialize the ASH shell inside alpine containers
+# Must have the following in your docker file
+#
+# COPY cont_ashrc /root/.ashrc
+# ENV ENV="/root/.ashrc"
+
+alias ll='ls -la'                              # long list

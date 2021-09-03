@@ -1,0 +1,24 @@
+FROM alpine:3.9
+
+ENV IN_CONTAINER 1
+
+## Install needed packages
+RUN apk --no-cache update
+RUN apk --no-cache add \
+    ca-certificates-cacert \
+    vim
+
+## Set up basic ash shell profile
+COPY containerFiles/ashrc /root/.ashrc
+COPY containerFiles/protoserver.json.default /etc/protoserver.json
+ENV ENV="/root/.ashrc"
+
+## Go looks for ca certs in a specific set of directories/files so set up a link for one of them...
+## (https://golang.org/src/crypto/x509/root_linux.go)
+RUN ln -s /etc/ssl/cert.pem /etc/ssl/ca-bundle.pem
+
+## Copy needed files from host
+COPY buildArtifacts/version /version
+COPY buildArtifacts/protoserver /protoserver
+
+ENTRYPOINT ["/protoserver"]

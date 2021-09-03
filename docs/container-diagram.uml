@@ -1,0 +1,63 @@
+@startuml
+!define SPRITESURL https://raw.githubusercontent.com/rabelenda/cicon-plantuml-sprites/v1.0/sprites
+!includeurl SPRITESURL/server.puml
+!includeurl SPRITESURL/user.puml
+
+title TXFERRY Container Component Diagram 
+
+skinparam monochrome true
+
+object env {
+    PROTOSERVER_VERSION
+    PROTOSERVER_LOG_LEVEL
+    PROTOSERVER_LOG_TYPE
+}
+
+object cm_protoserver_routes_json {
+    routes [
+        {"ingress":"/vx/get-contact", 
+          "action":"get", 
+          "macros": ["macro_std_response"], 
+          "egress":"http://svc-hr:8000/vx/contact"},
+    ]
+}
+
+package protoserver <<Rectangle>> {
+    class Config 
+    class Logger
+    class Router  {
+        /v0/version 
+        /v0/health
+        /vx/{routes}
+    }
+    class Macros
+    class Mux
+    class Handler
+    class Wrappers {
+        Auth()
+        Metric()
+        Sanitizer()
+    }
+}
+
+rectangle "<$user>\nClient user" as client_user {
+}
+
+env --> Logger
+env --> Config 
+cm_protoserver_routes_json --> Router
+client_user -left-> Mux 
+
+Mux -down-> Handler
+Handler ---> Mux 
+
+Handler -left-> Router 
+Router ---> Handler
+
+Router -left-> Wrappers 
+Wrappers ---> Router
+
+Wrappers ---> Macros 
+Macros ---> Wrappers
+
+@enduml

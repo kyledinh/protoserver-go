@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="731px" preserveAspectRatio="none" style="width:720px;height:731px;" version="1.1" viewBox="0 0 720 731" width="720px" zoomAndPan="magnify"><defs><filter height="300%" id="f15b2sne3ful26" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="367" x="170" y="16.708">TXFERRY Container Component Diagram</text><!--MD5=[d220a1289aeccd17b0056cc8066491ae]
+cluster protoserver--><rect fill="#FFFFFF" filter="url(#f15b2sne3ful26)" height="588" style="stroke:#000000;stroke-width:1.5;" width="359" x="239" y="131.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="95" x="371" y="146.9482">protoserver</text><!--MD5=[4bf8aff396996fef456cd268939daa24]
+class Config--><rect codeLine="25" fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="48" id="Config" style="stroke:#383838;stroke-width:1.5;" width="71" x="385.5" y="166.9531"/><ellipse cx="400.5" cy="182.9531" fill="#C2C2C2" rx="11" ry="11" style="stroke:#383838;stroke-width:1.0;"/><path d="M403.4688,188.5938 Q402.8906,188.8906 402.25,189.0313 Q401.6094,189.1875 400.9063,189.1875 Q398.4063,189.1875 397.0781,187.5469 Q395.7656,185.8906 395.7656,182.7656 Q395.7656,179.6406 397.0781,177.9844 Q398.4063,176.3281 400.9063,176.3281 Q401.6094,176.3281 402.25,176.4844 Q402.9063,176.6406 403.4688,176.9375 L403.4688,179.6563 Q402.8438,179.0781 402.25,178.8125 Q401.6563,178.5313 401.0313,178.5313 Q399.6875,178.5313 399,179.6094 Q398.3125,180.6719 398.3125,182.7656 Q398.3125,184.8594 399,185.9375 Q399.6875,187 401.0313,187 Q401.6563,187 402.25,186.7344 Q402.8438,186.4531 403.4688,185.875 L403.4688,188.5938 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="414.5" y="187.1074">Config</text><line style="stroke:#383838;stroke-width:1.5;" x1="386.5" x2="455.5" y1="198.9531" y2="198.9531"/><line style="stroke:#383838;stroke-width:1.5;" x1="386.5" x2="455.5" y1="206.9531" y2="206.9531"/><!--MD5=[248f897e4bb16c2722904b15df30346f]
+class Logger--><rect codeLine="26" fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="48" id="Logger" style="stroke:#383838;stroke-width:1.5;" width="75" x="275.5" y="166.9531"/><ellipse cx="290.5" cy="182.9531" fill="#C2C2C2" rx="11" ry="11" style="stroke:#383838;stroke-width:1.0;"/><path d="M293.4688,188.5938 Q292.8906,188.8906 292.25,189.0313 Q291.6094,189.1875 290.9063,189.1875 Q288.4063,189.1875 287.0781,187.5469 Q285.7656,185.8906 285.7656,182.7656 Q285.7656,179.6406 287.0781,177.9844 Q288.4063,176.3281 290.9063,176.3281 Q291.6094,176.3281 292.25,176.4844 Q292.9063,176.6406 293.4688,176.9375 L293.4688,179.6563 Q292.8438,179.0781 292.25,178.8125 Q291.6563,178.5313 291.0313,178.5313 Q289.6875,178.5313 289,179.6094 Q288.3125,180.6719 288.3125,182.7656 Q288.3125,184.8594 289,185.9375 Q289.6875,187 291.0313,187 Q291.6563,187 292.25,186.7344 Q292.8438,186.4531 293.4688,185.875 L293.4688,188.5938 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="304.5" y="187.1074">Logger</text><line style="stroke:#383838;stroke-width:1.5;" x1="276.5" x2="349.5" y1="198.9531" y2="198.9531"/><line style="stroke:#383838;stroke-width:1.5;" x1="276.5" x2="349.5" y1="206.9531" y2="206.9531"/><!--MD5=[a3ca736ecbdf9770d2cfef15820cfe41]
+class Router--><rect codeLine="27" fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="86.4141" id="Router" style="stroke:#383838;stroke-width:1.5;" width="83" x="382.5" y="448.9531"/><ellipse cx="401.55" cy="464.9531" fill="#C2C2C2" rx="11" ry="11" style="stroke:#383838;stroke-width:1.0;"/><path d="M404.5188,470.5938 Q403.9406,470.8906 403.3,471.0313 Q402.6594,471.1875 401.9563,471.1875 Q399.4563,471.1875 398.1281,469.5469 Q396.8156,467.8906 396.8156,464.7656 Q396.8156,461.6406 398.1281,459.9844 Q399.4563,458.3281 401.9563,458.3281 Q402.6594,458.3281 403.3,458.4844 Q403.9563,458.6406 404.5188,458.9375 L404.5188,461.6563 Q403.8938,461.0781 403.3,460.8125 Q402.7063,460.5313 402.0813,460.5313 Q400.7375,460.5313 400.05,461.6094 Q399.3625,462.6719 399.3625,464.7656 Q399.3625,466.8594 400.05,467.9375 Q400.7375,469 402.0813,469 Q402.7063,469 403.3,468.7344 Q403.8938,468.4531 404.5188,467.875 L404.5188,470.5938 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42" x="416.45" y="469.1074">Router</text><line style="stroke:#383838;stroke-width:1.5;" x1="383.5" x2="464.5" y1="480.9531" y2="480.9531"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="63" x="388.5" y="495.1636">/v0/version</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="388.5" y="507.9683">/v0/health</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="71" x="388.5" y="520.7729">/vx/{routes}</text><line style="stroke:#383838;stroke-width:1.5;" x1="383.5" x2="464.5" y1="527.3672" y2="527.3672"/><!--MD5=[2386f32a967a163828d3bb503be594d7]
+class Macros--><rect codeLine="32" fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="48" id="Macros" style="stroke:#383838;stroke-width:1.5;" width="77" x="262.5" y="655.9531"/><ellipse cx="277.5" cy="671.9531" fill="#C2C2C2" rx="11" ry="11" style="stroke:#383838;stroke-width:1.0;"/><path d="M280.4688,677.5938 Q279.8906,677.8906 279.25,678.0313 Q278.6094,678.1875 277.9063,678.1875 Q275.4063,678.1875 274.0781,676.5469 Q272.7656,674.8906 272.7656,671.7656 Q272.7656,668.6406 274.0781,666.9844 Q275.4063,665.3281 277.9063,665.3281 Q278.6094,665.3281 279.25,665.4844 Q279.9063,665.6406 280.4688,665.9375 L280.4688,668.6563 Q279.8438,668.0781 279.25,667.8125 Q278.6563,667.5313 278.0313,667.5313 Q276.6875,667.5313 276,668.6094 Q275.3125,669.6719 275.3125,671.7656 Q275.3125,673.8594 276,674.9375 Q276.6875,676 278.0313,676 Q278.6563,676 279.25,675.7344 Q279.8438,675.4531 280.4688,674.875 L280.4688,677.5938 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="45" x="291.5" y="676.1074">Macros</text><line style="stroke:#383838;stroke-width:1.5;" x1="263.5" x2="338.5" y1="687.9531" y2="687.9531"/><line style="stroke:#383838;stroke-width:1.5;" x1="263.5" x2="338.5" y1="695.9531" y2="695.9531"/><!--MD5=[53d8a9ccbf7fe4459e35f431eda565e0]
+class Mux--><rect codeLine="33" fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="48" id="Mux" style="stroke:#383838;stroke-width:1.5;" width="56" x="513" y="166.9531"/><ellipse cx="528" cy="182.9531" fill="#C2C2C2" rx="11" ry="11" style="stroke:#383838;stroke-width:1.0;"/><path d="M530.9688,188.5938 Q530.3906,188.8906 529.75,189.0313 Q529.1094,189.1875 528.4063,189.1875 Q525.9063,189.1875 524.5781,187.5469 Q523.2656,185.8906 523.2656,182.7656 Q523.2656,179.6406 524.5781,177.9844 Q525.9063,176.3281 528.4063,176.3281 Q529.1094,176.3281 529.75,176.4844 Q530.4063,176.6406 530.9688,176.9375 L530.9688,179.6563 Q530.3438,179.0781 529.75,178.8125 Q529.1563,178.5313 528.5313,178.5313 Q527.1875,178.5313 526.5,179.6094 Q525.8125,180.6719 525.8125,182.7656 Q525.8125,184.8594 526.5,185.9375 Q527.1875,187 528.5313,187 Q529.1563,187 529.75,186.7344 Q530.3438,186.4531 530.9688,185.875 L530.9688,188.5938 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="542" y="187.1074">Mux</text><line style="stroke:#383838;stroke-width:1.5;" x1="514" x2="568" y1="198.9531" y2="198.9531"/><line style="stroke:#383838;stroke-width:1.5;" x1="514" x2="568" y1="206.9531" y2="206.9531"/><!--MD5=[a83d828be13d333e1fddb3d4d9d97191]
+class Handler--><rect codeLine="34" fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="48" id="Handler" style="stroke:#383838;stroke-width:1.5;" width="81" x="500.5" y="467.9531"/><ellipse cx="515.5" cy="483.9531" fill="#C2C2C2" rx="11" ry="11" style="stroke:#383838;stroke-width:1.0;"/><path d="M518.4688,489.5938 Q517.8906,489.8906 517.25,490.0313 Q516.6094,490.1875 515.9063,490.1875 Q513.4063,490.1875 512.0781,488.5469 Q510.7656,486.8906 510.7656,483.7656 Q510.7656,480.6406 512.0781,478.9844 Q513.4063,477.3281 515.9063,477.3281 Q516.6094,477.3281 517.25,477.4844 Q517.9063,477.6406 518.4688,477.9375 L518.4688,480.6563 Q517.8438,480.0781 517.25,479.8125 Q516.6563,479.5313 516.0313,479.5313 Q514.6875,479.5313 514,480.6094 Q513.3125,481.6719 513.3125,483.7656 Q513.3125,485.8594 514,486.9375 Q514.6875,488 516.0313,488 Q516.6563,488 517.25,487.7344 Q517.8438,487.4531 518.4688,486.875 L518.4688,489.5938 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49" x="529.5" y="488.1074">Handler</text><line style="stroke:#383838;stroke-width:1.5;" x1="501.5" x2="580.5" y1="499.9531" y2="499.9531"/><line style="stroke:#383838;stroke-width:1.5;" x1="501.5" x2="580.5" y1="507.9531" y2="507.9531"/><!--MD5=[e7e447d1d114f852953f2f9726fdd2a5]
+class Wrappers--><rect codeLine="35" fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="86.4141" id="Wrappers" style="stroke:#383838;stroke-width:1.5;" width="92" x="255" y="448.9531"/><ellipse cx="270" cy="464.9531" fill="#C2C2C2" rx="11" ry="11" style="stroke:#383838;stroke-width:1.0;"/><path d="M272.9688,470.5938 Q272.3906,470.8906 271.75,471.0313 Q271.1094,471.1875 270.4063,471.1875 Q267.9063,471.1875 266.5781,469.5469 Q265.2656,467.8906 265.2656,464.7656 Q265.2656,461.6406 266.5781,459.9844 Q267.9063,458.3281 270.4063,458.3281 Q271.1094,458.3281 271.75,458.4844 Q272.4063,458.6406 272.9688,458.9375 L272.9688,461.6563 Q272.3438,461.0781 271.75,460.8125 Q271.1563,460.5313 270.5313,460.5313 Q269.1875,460.5313 268.5,461.6094 Q267.8125,462.6719 267.8125,464.7656 Q267.8125,466.8594 268.5,467.9375 Q269.1875,469 270.5313,469 Q271.1563,469 271.75,468.7344 Q272.3438,468.4531 272.9688,467.875 L272.9688,470.5938 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="60" x="284" y="469.1074">Wrappers</text><line style="stroke:#383838;stroke-width:1.5;" x1="256" x2="346" y1="480.9531" y2="480.9531"/><line style="stroke:#383838;stroke-width:1.5;" x1="256" x2="346" y1="488.9531" y2="488.9531"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="261" y="503.1636">Auth()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="261" y="515.9683">Metric()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="261" y="528.7729">Sanitizer()</text><!--MD5=[3303562ea9ae16f43173550c00e66137]
+entity client_user--><rect fill="#FFFFFF" filter="url(#f15b2sne3ful26)" height="84.2969" style="stroke:#000000;stroke-width:1.5;" width="94" x="614" y="148.9531"/><image height="48" width="48" x="624" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAABsUlEQVR4Xu2XYY2EQAyFsYAFLGABC1hYC1jAAhawgAUsYAEL3MuSkOxjZ9pXLrd7Cd9Pdks/hrYzFNuXUfCFT3MLWVwVejwe0zTx1QtcEoJK8aQsy67rlmXhf+jEheZ5bppmFzqoquqimSwED6wHeZyp63oYBg52IAshDSdPAG8OdiAL9X3PmdOs68rxFrIQ2orTpgk0oCx0LuQM4zhyvIUshD7itGmwnBxvIQtxzizoNY630IRQpJzTgm9hoQVg4nFCC7XRNCEUKSe0wCDlu2TRhPxT8UCd15rQsZv6UTtfEwJoHM6ZJrB7yEJSGWGf4XgLWQh4dvsdtcW2mJCztHEw4kgHEaHNt0ixY1pQCE/P+V9p25ZjfASFzD1EnYcHQaEtu0iBPfUgLpQp7cC57CAihPeVPzfi10DD78hCGIyeFitCU3GThNDG0r5RPLcO9fV5hTIlbILH8DedLYRHdL6jPJhMnlGZE0JhSt8YHszCSgpluvoi+G7JHJLeCOF9q8UbAGv/trBYSPpSvs75gMtC+Yn365y/JG+hV24hi38ohLav/5Dz4Gahj3MLWXyd0A8rydys9uRxCQAAAABJRU5ErkJggg==" y="158.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="624" y="219.9482">Client user</text><rect fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="60.8906" style="stroke:#383838;stroke-width:1.5;" width="154" x="290" y="27.9531"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="22" x="356" y="41.0918">env</text><line style="stroke:#383838;stroke-width:1.5;" x1="291" x2="443" y1="45.9219" y2="45.9219"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="129" x="296" y="59.2041">PROTOSERVER_VERSION</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="142" x="296" y="70.8447">PROTOSERVER_LOG_LEVEL</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="135" x="296" y="82.4854">PROTOSERVER_LOG_TYPE</text><rect fill="#F8F8F8" filter="url(#f15b2sne3ful26)" height="95.8125" style="stroke:#383838;stroke-width:1.5;" width="216" x="7" y="292.9531"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="176" x="27" y="306.0918">cm_protoserver_routes_json</text><line style="stroke:#383838;stroke-width:1.5;" x1="8" x2="222" y1="310.9219" y2="310.9219"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="38" x="13" y="324.2041">routes [</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="140" x="13" y="335.8447">{"ingress":"/vx/get-contact",</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="71" x="13" y="347.4854">"action":"get",</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="173" x="13" y="359.126">"macros": ["macro_std_response"],</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="204" x="13" y="370.7666">"egress":"http://svc-hr:8000/vx/contact"},</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacing" textLength="4" x="13" y="382.4072">]</text><!--MD5=[83f6a1e0afc35303832849c2092b0eb9]
+link env to Logger--><path codeLine="45" d="M354.747,89.0651 C345.72,110.8781 333.523,140.3561 324.644,161.8131 " fill="none" id="env-to-Logger" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="322.689,166.5371,329.8277,159.7519,324.6017,161.9174,322.4362,156.6915,322.689,166.5371" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[aa70e778a12f4f8243251af4c809faca]
+link env to Config--><path codeLine="46" d="M379.253,89.0651 C388.28,110.8781 400.477,140.3561 409.356,161.8131 " fill="none" id="env-to-Config" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="411.311,166.5371,411.5638,156.6915,409.3983,161.9174,404.1723,159.7519,411.311,166.5371" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[0825c6ed41d3e4e86383381fb753a092]
+link cm_protoserver_routes_json to Router--><path codeLine="47" d="M223.194,385.5791 C278.339,408.3491 339.116,434.4221 365,448.9531 C369.276,451.3531 373.618,453.9971 377.908,456.7541 " fill="none" id="cm_protoserver_routes_json-to-Router" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="382.175,459.5451,376.831,451.2721,377.9901,456.809,372.4532,457.968,382.175,459.5451" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[f610892ab4391ff438d72bbe0ad27ec3]
+reverse link Mux to client_user--><path codeLine="48" d="M574.382,190.9531 C587.583,190.9531 600.785,190.9531 613.986,190.9531 " fill="none" id="Mux-backto-client_user" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="569.125,190.9531,578.125,194.9531,574.125,190.9531,578.125,186.9531,569.125,190.9531" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[f4191e126055fd54a50672839d5162ab]
+link Mux to Handler--><path codeLine="50" d="M533.741,215.4151 C526.63,269.6711 526.426,403.6561 533.129,462.4831 " fill="none" id="Mux-to-Handler" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="533.755,467.6001,536.6325,458.181,533.1478,462.6371,528.6917,459.1525,533.755,467.6001" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[af2d6546a4351300fdf2b9449315aa0c]
+link Handler to Mux--><path codeLine="51" d="M548.671,467.6001 C556.21,413.4511 556.436,279.4691 549.348,220.5411 " fill="none" id="Handler-to-Mux" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="548.686,215.4151,545.871,224.8531,549.326,220.374,553.8052,223.8291,548.686,215.4151" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[de9e752046207094df4e9bb2764f307c]
+reverse link Router to Handler--><path codeLine="53" d="M470.648,522.8791 C484.378,525.9461 498.108,523.6841 511.837,516.0921 " fill="none" id="Router-backto-Handler" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="465.59,521.5081,473.2294,527.7241,470.4157,522.8167,475.3232,520.003,465.59,521.5081" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[ff701e4b8c45e5bf5e05fe82cc1a7ae9]
+link Router to Handler--><path codeLine="54" d="M465.59,462.3981 C479.44,457.9841 493.29,458.9921 507.14,465.4251 " fill="none" id="Router-to-Handler" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="511.837,467.8141,505.6286,460.1685,507.3804,465.5473,502.0016,467.299,511.837,467.8141" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[053b14a642f1e4208e945585803eb295]
+reverse link Wrappers to Router--><path codeLine="56" d="M352.066,523.2751 C362.13,525.0661 372.195,524.2651 382.259,520.8741 " fill="none" id="Wrappers-backto-Router" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="347.125,522.1871,355.0553,528.0275,352.0082,523.2615,356.7743,520.2144,347.125,522.1871" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[d23c5f48a1c1c0c26fac9d150c2ba5b2]
+link Wrappers to Router--><path codeLine="57" d="M347.125,461.7191 C357.19,459.0801 367.254,459.0321 377.319,461.5751 " fill="none" id="Wrappers-to-Router" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="382.259,463.0321,374.7575,456.6503,377.4631,461.6182,372.4952,464.3238,382.259,463.0321" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[3799ec06077c8181fae3ddbe72a376eb]
+link Wrappers to Macros--><path codeLine="59" d="M290.118,535.1591 C287.219,570.5211 287.694,620.0151 291.543,650.746 " fill="none" id="Wrappers-to-Macros" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="292.245,655.8848,294.9899,646.4262,291.5682,650.9308,287.0635,647.5091,292.245,655.8848" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[b52db18a1a99adb4faaf3e892d48ed8c]
+link Macros to Wrappers--><path codeLine="60" d="M310.27,655.8848 C314.796,627.1991 315.69,577.5051 312.952,540.5201 " fill="none" id="Macros-to-Wrappers" style="stroke:#383838;stroke-width:1.0;"/><polygon fill="#383838" points="312.522,535.1591,309.2548,544.4503,312.922,540.1431,317.2291,543.8103,312.522,535.1591" style="stroke:#383838;stroke-width:1.0;"/><!--MD5=[9bc099d4409754fd275e4c9d1c4fe90b]
+@startuml
+!define SPRITESURL https://raw.githubusercontent.com/rabelenda/cicon-plantuml-sprites/v1.0/sprites
+!includeurl SPRITESURL/server.puml
+!includeurl SPRITESURL/user.puml
+
+title TXFERRY Container Component Diagram 
+
+skinparam monochrome true
+
+object env {
+    PROTOSERVER_VERSION
+    PROTOSERVER_LOG_LEVEL
+    PROTOSERVER_LOG_TYPE
+}
+
+object cm_protoserver_routes_json {
+    routes [
+        {"ingress":"/vx/get-contact", 
+          "action":"get", 
+          "macros": ["macro_std_response"], 
+          "egress":"http://svc-hr:8000/vx/contact"},
+    ]
+}
+
+package protoserver <<Rectangle>> {
+    class Config 
+    class Logger
+    class Router  {
+        /v0/version 
+        /v0/health
+        /vx/{routes}
+    }
+    class Macros
+    class Mux
+    class Handler
+    class Wrappers {
+        Auth()
+        Metric()
+        Sanitizer()
+    }
+}
+
+rectangle "<$user>\nClient user" as client_user {
+}
+
+env - -> Logger
+env - -> Config 
+cm_protoserver_routes_json - -> Router
+client_user -left-> Mux 
+
+Mux -down-> Handler
+Handler - - -> Mux 
+
+Handler -left-> Router 
+Router - - -> Handler
+
+Router -left-> Wrappers 
+Wrappers - - -> Router
+
+Wrappers - - -> Macros 
+Macros - - -> Wrappers
+
+@enduml
+
+@startuml
+sprite $server [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000122222222222222222222222222222222222222221000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFF4444FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFF0000FFFFFFFFFFF0000000000000000000EFF8000
+0008FFF0000FFFFFFFFFFF0000000000000000000EFF8000
+0008FFF0000FFFFFFFFFFF4444444444444444444EFF8000
+0008FFF9999FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0006CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC6000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000488888888888888888888888888888888888888884000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFF0000FFFFFFFFFFF9999999999999999999FFF8000
+0008FFF0000FFFFFFFFFFF0000000000000000000EFF8000
+0008FFF0000FFFFFFFFFFF0000000000000000000EFF8000
+0008FFF0000FFFFFFFFFFF9999999999999999999FFF8000
+0008FFFEEEEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000488888888888888888888888888888888888888884000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0006CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC6000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFF9999FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFF0000FFFFFFFFFFF4444444444444444444EFF8000
+0008FFF0000FFFFFFFFFFF0000000000000000000EFF8000
+0008FFF0000FFFFFFFFFFF0000000000000000000EFF8000
+0008FFF4444FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000122222222222222222222222222222222222222221000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+sprite $user [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000940000000000000000000000000
+000000000000000000004FFE820000000000000000000000
+00000000000000000003BFFFFFD820000000000000000000
+00000000000000003EFFFFFFFFFFFC600000000000000000
+00000000000000006FFFFFFFFFFFFFE00000000000000000
+00000000000000007FFFFFFFFFFFFFF10000000000000000
+00000000000000009FFFFFFFFFFFFFF40000000000000000
+0000000000000000BFFFFFFFFFFFFFF50000000000000000
+0000000000000000DFFFFFFFFFFFFFF90000000000000000
+0000000000000000FFFFFFFFFFFFFFFC0000000000000000
+0000000000000001FFFFFFFFFFFFFFFF0000000000000000
+0000000000000002FFFFFFFFFFFFFFFF1000000000000000
+0000000000000005FFFFFFFFFFFFFFFF3000000000000000
+0000000000000006FFFFFFFFFFFFFFFF6000000000000000
+0000000000000004FFFFFFFFFFFFFFFF5000000000000000
+0000000000000000CFFFFFFFFFFFFFFE0000000000000000
+00000000000000005FFFFFFFFFFFFFF70000000000000000
+00000000000000000EFFFFFFFFFFFFF10000000000000000
+000000000000000006FFFFFFFFFFFF800000000000000000
+000000000000000000EFFFFFFFFFFF200000000000000000
+0000000000000000008FFFFFFFFFFA000000000000000000
+0000000000000000001FFFFFFFFFF3000000000000000000
+00000000000000000008FFFFFFFFC0000000000000000000
+00000000000000000006FFFFFFFF40000000000000000000
+0000000000000000019FFFFFFFFF91000000000000000000
+00000000000000005EFFFFFFFFFFFF700000000000000000
+000000000000002CFFFFFFFFFFFFFFFE4000000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFC30000000000000
+000000000004EFFFFFFFFFFFFFFFFFFFFFFA200000000000
+0000000001BFFFFFFFFFFFFFFFFFFFFFFFFFF70000000000
+000000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD500000000
+0000003CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB3000000
+000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF900000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF900000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF900000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF900000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF900000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF900000
+000007CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC700000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+title TXFERRY Container Component Diagram 
+
+skinparam monochrome true
+
+object env {
+    PROTOSERVER_VERSION
+    PROTOSERVER_LOG_LEVEL
+    PROTOSERVER_LOG_TYPE
+}
+
+object cm_protoserver_routes_json {
+    routes [
+        {"ingress":"/vx/get-contact", 
+          "action":"get", 
+          "macros": ["macro_std_response"], 
+          "egress":"http://svc-hr:8000/vx/contact"},
+    ]
+}
+
+package protoserver <<Rectangle>> {
+    class Config 
+    class Logger
+    class Router  {
+        /v0/version 
+        /v0/health
+        /vx/{routes}
+    }
+    class Macros
+    class Mux
+    class Handler
+    class Wrappers {
+        Auth()
+        Metric()
+        Sanitizer()
+    }
+}
+
+rectangle "<$user>\nClient user" as client_user {
+}
+
+env - -> Logger
+env - -> Config 
+cm_protoserver_routes_json - -> Router
+client_user -left-> Mux 
+
+Mux -down-> Handler
+Handler - - -> Mux 
+
+Handler -left-> Router 
+Router - - -> Handler
+
+Router -left-> Wrappers 
+Wrappers - - -> Router
+
+Wrappers - - -> Macros 
+Macros - - -> Wrappers
+
+@enduml
+
+PlantUML version 1.2021.01(Tue Feb 02 07:55:08 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
