@@ -8,6 +8,7 @@ import (
 
 	"protoserver-go/pkg/common"
 	"protoserver-go/pkg/common/sys"
+	"protoserver-go/pkg/config"
 	"protoserver-go/pkg/handler"
 	"protoserver-go/pkg/model"
 
@@ -26,11 +27,10 @@ func StartRouter(ctx context.Context, port int) {
 
 	mux := http.NewServeMux()
 	mux.Handle("/heartbeat", logWrapper(heartbeatHandler))
-	mux.Handle("/health", logWrapper(heartbeatHandler)) // TODO: add a heathcheck ie. config.Ready()...
+	mux.Handle("/liveness", logWrapper(livenessHandler)) // TODO: add a heathcheck ie. config.Ready()...
 	mux.Handle("/version", logWrapper(versionHandler))
 
 	// This handler will be deprecated for /vx/ handler
-	mux.Handle("/v1/mock/", logWrapper(handler.MockHandler))
 	mux.Handle("/vx/", logWrapper(handler.VxHandler))
 	mux.Handle("/secure/", authWrapper(logWrapper(handler.VxHandler)))
 
@@ -47,6 +47,16 @@ func StartRouter(ctx context.Context, port int) {
 		log.Panic("Failed to start server", zap.Error(err))
 	}
 
+}
+
+func livenessHandler(w http.ResponseWriter, r *http.Request) {
+	if config.IsReady() {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("ok"))
+	} else {
+		w.WriteHeader(http.StatusServiceUnavailable)
+		w.Write([]byte("fail"))
+	}
 }
 
 func heartbeatHandler(w http.ResponseWriter, r *http.Request) {

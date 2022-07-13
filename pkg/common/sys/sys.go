@@ -2,8 +2,8 @@ package sys
 
 // Logging keys
 const (
-	CALLREF     = "callRef"
-	INTERNALREF = "internalRef"
+	CALLREF     = "callref"
+	INTERNALREF = "internalref"
 	LOG         = "log"
 )
 

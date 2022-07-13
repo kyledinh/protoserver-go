@@ -12,7 +12,10 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
+ignored/
 vendor/
 cmd/server/protoserver
 kube/buildArtifacts
 cmd/server/protoserverMac
+
+dist/

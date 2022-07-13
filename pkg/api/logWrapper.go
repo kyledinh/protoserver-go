@@ -21,19 +21,19 @@ func logWrapper(f http.HandlerFunc) http.HandlerFunc {
 func requestWithLogContext(r *http.Request) *http.Request {
 	ctx := r.Context()
 	ref := fmt.Sprintf("api%d_%d", rand.Uint32(), rand.Uint32())
-	logID := r.Header.Get("Call-Ref")
-	if logID == "" {
+	traceID := r.Header.Get(sys.CALLREF)
+	if traceID == "" {
 		id := make([]byte, 16)
 		if _, err := rand.Read(id); err != nil {
 			common.Logger(ctx).Error("Unable to generate a call ref", zap.Error(err))
 		} else {
-			logID = fmt.Sprintf("%s_%s", r.RequestURI, hex.EncodeToString(id))
+			traceID = fmt.Sprintf("%s_%s", r.RequestURI, hex.EncodeToString(id))
 		}
 	}
 
-	logger := common.Logger(ctx).With(zap.String(sys.INTERNALREF, ref), zap.String(sys.CALLREF, logID))
+	logger := common.Logger(ctx).With(zap.String(sys.INTERNALREF, ref), zap.String(sys.CALLREF, traceID))
 	ctx = context.WithValue(ctx, sys.LOG, logger)
-	ctx = context.WithValue(ctx, sys.CALLREF, logID)
+	ctx = context.WithValue(ctx, sys.CALLREF, traceID)
 
 	return r.WithContext(ctx)
 }

@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:stretch-slim as builder-protoserver-go
 
 # The default repos in the stretch-slim image stopped working consistently for some reason so overwrite 'em...
 #RUN echo "deb http://ftp.us.debian.org/debian/ stretch main contrib non-free" > /etc/apt/sources.list
@@ -12,11 +12,16 @@ RUN apt-get -y clean
 RUN wget --quiet https://dl.google.com/go/go1.15.3.linux-amd64.tar.gz
 RUN tar -xf go1.15.3.linux-amd64.tar.gz -C /usr/local
 RUN rm go1.15.3.linux-amd64.tar.gz
+RUN mkdir /go
 
 ## Set up the project directory and go pathing
 ENV GOROOT=/usr/local/go
-ENV PATH=$GOROOT/bin:$PATH
+ENV GOPATH=/go
+ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 RUN go version
+
+## Install delve debugger
+RUN go get -u github.com/derekparker/delve/cmd/dlv
 
 ## Set working directory
 WORKDIR /opt

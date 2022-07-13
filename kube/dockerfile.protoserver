@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.9 as protoserver
 
 ENV IN_CONTAINER 1
 
@@ -22,3 +22,4 @@ COPY buildArtifacts/version /version
 COPY buildArtifacts/protoserver /protoserver
 
 ENTRYPOINT ["/protoserver"]
+
