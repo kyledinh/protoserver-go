@@ -1,8 +1,9 @@
-package common
+package proto_test
 
 import (
 	"bytes"
 	"context"
+	"protoserver-go/pkg/proto"
 	"testing"
 
 	"github.com/spf13/viper"
@@ -32,8 +33,8 @@ func TestLogger(t *testing.T) {
 			viper.Set("log.buffer", &buf)
 			viper.Set("log.level", "debug")
 
-			SetupLogger(ctx, tt.servicename)
-			logger, err := GetLogger(tt.servicename)
+			proto.SetupLogger(ctx, tt.servicename)
+			logger, err := proto.GetLogger(tt.servicename)
 			require.NoError(t, err)
 
 			logger.Info(tt.msg, zap.String(tt.key, tt.value))

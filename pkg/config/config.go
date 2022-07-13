@@ -7,8 +7,8 @@ import (
 	"log"
 	"math/rand"
 	"os"
-	"protoserver-go/pkg/common"
 	"protoserver-go/pkg/model"
+	"protoserver-go/pkg/proto"
 	"strings"
 	"time"
 
@@ -77,11 +77,11 @@ func LoadConfig() {
 	}
 
 	// Setup structured logger
-	common.SetupLogger(ctx, viper.GetString("serviceName"))
-	common.DefaultLogger().Info("Setup has set up logger to json output........... ")
+	proto.SetupLogger(ctx, viper.GetString("serviceName"))
+	proto.DefaultLogger().Info("Setup has set up logger to json output........... ")
 	log.Printf("... CurrentConfig %v", CurrentConfig())
 
-	common.DefaultLogger().Info("current config", zap.String("version", viper.GetString("version")), zap.String("log level", viper.GetString("log.level")))
+	proto.DefaultLogger().Info("current config", zap.String("version", viper.GetString("version")), zap.String("log level", viper.GetString("log.level")))
 
 	Ready = true
 }

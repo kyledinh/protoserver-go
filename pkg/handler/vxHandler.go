@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"protoserver-go/pkg/common"
-	"protoserver-go/pkg/common/sys"
 	"protoserver-go/pkg/config"
 	"protoserver-go/pkg/macro"
+	"protoserver-go/pkg/proto"
+	"protoserver-go/pkg/proto/sys"
 	"strconv"
 	"strings"
 	"time"
@@ -19,7 +19,7 @@ import (
 
 func VxHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
-	logger := common.Logger(ctx)
+	logger := proto.Logger(ctx)
 	var dirty bool
 	endpoint := r.URL.Path
 	traceUUID := r.Header.Get("traceUUID")

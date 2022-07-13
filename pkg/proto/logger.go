@@ -1,4 +1,4 @@
-package common
+package proto
 
 import (
 	"context"
@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"protoserver-go/pkg/common/sys"
+	"protoserver-go/pkg/proto/sys"
 	"strings"
 	"time"
 

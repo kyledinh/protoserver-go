@@ -3,8 +3,8 @@ package macro
 import (
 	"encoding/json"
 	"net/http"
-	"protoserver-go/pkg/common/sys"
 	"protoserver-go/pkg/model"
+	"protoserver-go/pkg/proto/sys"
 	"time"
 )
 

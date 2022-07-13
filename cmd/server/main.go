@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"protoserver-go/pkg/api"
-	"protoserver-go/pkg/common"
 	"protoserver-go/pkg/config"
+	"protoserver-go/pkg/proto"
 
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -15,7 +15,7 @@ func main() {
 	config.LoadConfig()
 
 	// Zap Logger, json structured
-	logger := common.Logger(ctx)
+	logger := proto.Logger(ctx)
 
 	logger.Info("MAIN")
 	serverPort := viper.GetInt("serverPort")

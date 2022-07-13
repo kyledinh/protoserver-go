@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"strconv"
 
-	"protoserver-go/pkg/common"
-	"protoserver-go/pkg/common/sys"
 	"protoserver-go/pkg/config"
 	"protoserver-go/pkg/handler"
 	"protoserver-go/pkg/model"
+	"protoserver-go/pkg/proto"
+	"protoserver-go/pkg/proto/sys"
 
 	"log"
 	"net/http"
@@ -68,7 +68,7 @@ func heartbeatHandler(w http.ResponseWriter, r *http.Request) {
 
 func versionHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
-	logger := common.Logger(ctx)
+	logger := proto.Logger(ctx)
 
 	w.WriteHeader(http.StatusOK)
 	if _, err := fmt.Fprintln(w, sys.SUCCESS); err != nil {
