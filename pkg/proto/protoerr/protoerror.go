@@ -6,22 +6,28 @@ import (
 	"github.com/pkg/errors"
 )
 
+var (
+	ErrResourceNotFound = errors.New("RESOURCE_NOT_FOUND")
+	ErrResourceRead     = errors.New("RESOURCE_NOT_READ")
+	ErrConversionFormat = errors.New("CONVERSION_FORMAT_FAILED")
+	ErrCLIAction        = errors.New("CLI_ACTION_FAILED")
+	ErrNotFound         = errors.New("NOT_FOUND")
+	ErrWriteFile        = errors.New("WRITE_FILE_FAILED")
+)
+
 type WrappedError struct {
-	WrapType error
-	Err      error
+	Message string
+	Err     *error
 }
 
 func (w *WrappedError) Error() string {
-	return fmt.Sprintf("%s: %v", w.WrapType.Error(), w.Err)
+	return fmt.Sprintf("wrapped message: %s", w.Message)
 }
 
-func Wrap(err error, wrapType error) *WrappedError {
-	return &WrappedError{
-		WrapType: wrapType,
-		Err:      err,
+func NewWrappedError(message string, err *error) WrappedError {
+	wrappedError := WrappedError{
+		Message: message,
+		Err:     err,
 	}
+	return wrappedError
 }
-
-var (
-	ErrNotFound = errors.New("NOT_FOUND")
-)

@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Protoserver API
+  description: A sample API to illustrate OpenAPI concepts
+
+servers:
+
+security:
+  - BasicAuth: []  
+
+paths: 
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http  
+      scheme: basic
+
+  schemas:
+    Route:
+      type: object 
+      required:
+        - id
+      properties:
+        action:
+          type: string
+        egress:
+          type: string
+        eggresses:
+          type: array  
+          items:
+            type: string 
+        file:
+          type: string
+        ingress:
+          type: string 
+        logic:
+          type: string 
+        macros:
+          type: array  
+          items:
+            type: string 
+        payload:
+          type: string
+          format: binary
+        
+        
