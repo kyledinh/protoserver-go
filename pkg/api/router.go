@@ -33,6 +33,7 @@ func StartRouter(ctx context.Context, port int) {
 	// This handler will be deprecated for /vx/ handler
 	mux.Handle("/vx/", logWrapper(handler.VxHandler))
 	mux.Handle("/secure/", authWrapper(logWrapper(handler.VxHandler)))
+	mux.Handle("/secure/heartbeat", authWrapper(logWrapper(heartbeatHandler)))
 
 	portStr := fmt.Sprintf(":%d", port)
 	server := &http.Server{

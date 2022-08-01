@@ -7,7 +7,7 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_DB: postgresdb
+  POSTGRES_DB: txferry 
   POSTGRES_USER: admin
   POSTGRES_PASSWORD: localpassword 
 
@@ -80,8 +80,9 @@ spec:
 
 ---
 kind: Service
+apiVersion: v1
 metadata:
-  name: postgres
+  name: svc-postgres
   namespace: txferry
   labels:
     app: postgres

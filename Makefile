@@ -16,7 +16,7 @@ BIN_DIR := $(GOPATH)/bin
 GOLANGCI_LINT := $(BIN_DIR)/golangci-lint
 
 # ACTIONS
-.PHONY: build test
+.PHONY: build kube test 
 
 analyze:
 	@./scripts/lint.sh
@@ -25,6 +25,10 @@ analyze:
 
 check:
 	@./scripts/check.sh
+
+kube:
+	@./kube/make-builder-container.sh
+	@./kube/make-protoserver-container.sh
 
 lint: 
 	@./scripts/lint.sh

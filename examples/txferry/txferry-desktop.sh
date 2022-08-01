@@ -28,14 +28,9 @@ function fn_down {
 	kubectl delete ingress ingress-api-txferry-local -n $NAMESPACE
 	kubectl delete cm cm-txferry-api-protoserver-routes-json -n $NAMESPACE
 
-	kubectl delete deployment agent-api -n $NAMESPACE
-	kubectl delete service/svc-agent -n $NAMESPACE
-	kubectl delete cm cm-agent-api-protoserver-routes-json -n $NAMESPACE
-
-	kubectl delete deployment bank-api -n $NAMESPACE
-	kubectl delete service/svc-bank -n $NAMESPACE
-	kubectl delete cm cm-bank-api-protoserver-routes-json -n $NAMESPACE
-
+	kubectl delete deployment postgres -n $NAMESPACE
+	kubectl delete service/svc-postgres -n $NAMESPACE
+	kubectl delete cm postgres-config -n $NAMESPACE
 }
 
 function fn_ex {

@@ -1,4 +1,8 @@
 {
     "name" : "default",
-    "serverPort" : 8000
+    "serverPort" : 8000,
+    "jwtSecret" : "SECRETKEY",
+    "postgresDB" : "txferry",
+    "postgresUser" : "admin",
+    "postgresPassword" : "localpassword"
 }

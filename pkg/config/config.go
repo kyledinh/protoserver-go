@@ -33,6 +33,11 @@ func LoadConfig() {
 	viper.SetDefault("serverPort", 8000)
 	viper.SetDefault("serviceName", "protoserver")
 
+	viper.SetDefault("jwtSecret", "SECRETKEY")
+	viper.SetDefault("postgresDB", "txferry")
+	viper.SetDefault("postgresUser", "admin")
+	viper.SetDefault("postgresPassword", "localpassword")
+
 	viper.SetDefault("authtokens", []string{"PROTOSERVER_DEV_TOKEN", "PROTOSERVER_TEST_TOKEN"})
 	viper.SetDefault("upperLimit", 100)
 	viper.SetDefault("timeout", 100)
