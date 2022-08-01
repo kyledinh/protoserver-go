@@ -1,0 +1,96 @@
+## TXFERRY
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm-txferry-api-protoserver-routes-json
+  namespace: txferry
+data:
+  protoserver-routes.json: |-
+    [
+      {"ingress":"/vx/agent", "action":"get", "egress":"http://svc-agent:8000/v1/mock/purchase","payload":"{}"},
+      {"ingress":"/vx/contact", "action":"get", "egress":"http://svc-datawasher.default/random_contact","payload":"{}"}
+    ]
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: txferry-api 
+  namespace: txferry
+  labels:
+    app: txferry-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: txferry-api
+  template:
+    metadata:
+      labels:
+        app: txferry-api
+    spec:
+      volumes:
+        - name: cm-protoserver-routes-json-volume
+          configMap:
+            name: cm-txferry-api-protoserver-routes-json
+      containers:
+        - name: protoserver 
+          image: kyledinh/protoserver:latest 
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              memory: "64Mi"
+              cpu: "1"
+            requests:
+              cpu: "0.5"
+          volumeMounts:
+            - name: cm-protoserver-routes-json-volume
+              mountPath: /etc/protoserver-routes.json
+              subPath: protoserver-routes.json
+          ports:
+            - containerPort: 8000
+          env:
+            - name: PROTOSERVER_VERSION
+              value: "protoserver-0.0.12"
+            - name: PROTOSERVER_LOG_LEVEL
+              value: "debug"
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: svc-txferry
+  namespace: txferry
+spec:
+  selector:
+    app: txferry-api
+  ports:
+    - port: 8000 # Default port for image
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-api-txferry-local
+  namespace: txferry
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  defaultBackend:
+    service:
+      name: svc-txferry
+      port:
+        number: 8000  
+  rules:
+  - host: api.txferry.local
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-txferry
+            port: 
+              number: 8000

@@ -1,0 +1,90 @@
+#!/bin/bash
+
+## ENVs and VARs
+VERSION=0.0.2
+
+## CHECKS
+if kubectl version | grep -q "Client Version"
+then
+    echo "kt(kubernetes tool) version $VERSION by Kyle Dinh"
+else
+    echo "kubectl is not installed"
+    exit 0
+fi
+
+## FUNCTIONS
+
+function fn_context {
+    if [ "$#" -eq 0 ]; then
+	    echo "kubectl config get-contexts"
+        kubectl config get-contexts
+	    exit 0
+    fi
+    echo; echo "## Search for a context by paramater"
+    kubectl config get-contexts | grep $1 | awk '{print $2}' | tr -d '\n' | tee >(pbcopy)
+}
+
+function fn_info {
+    echo; echo "## kubectl version"
+    kubectl version
+
+    echo; echo "## kubectl config get-contexts"
+    kubectl config get-contexts
+
+    echo; echo "## kubectl cluster-info"
+    kubectl cluster-info
+
+    echo; echo "## kubectl get ingress"
+    kubectl get ingress ${@:1}
+
+    echo; echo "## kubectl get svc (Services)"
+    kubectl get services ${@:1}
+
+    echo; echo "## kubectl get deployments"
+    kubectl get deployments ${@:1}
+
+    echo; echo "## kubectl get pod (Pods)"
+    kubectl get pod ${@:1}
+
+    echo; echo "## kubectl get cm (Config Maps)"
+    kubectl get cm ${@:1}
+
+    echo; echo "## kubectl get namespaces"
+    kubectl get namespaces 
+}
+
+function fn_nodes {
+    echo; echo "## kubectl describe nodes"
+    kubectl describe nodes
+}
+
+function fn_switch {
+    echo; echo "## kubectl config use-context $1"
+    kubectl config use-context $1
+    
+    echo; echo "## kubectl config get-contexts"
+    kubectl config get-contexts
+}
+
+## MAIN/SWITCH
+if [ "$#" -eq 0 ]; then
+	echo "USAGE: $0 <arguments>. Same as kubectl. Try 'kt help'."
+	exit 1
+fi
+
+case "$1" in
+    ctx|context)
+		fn_context ${@:2}
+		exit 0;;
+	info)
+		fn_info ${@:2}
+		exit 0;;
+	nodes)
+		fn_nodes ${@:2}
+		exit 0;;
+	switch)
+		fn_switch ${@:2}
+        	exit 0;;
+	*)
+		kubectl "$@";;        
+esac
