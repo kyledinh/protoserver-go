@@ -8,6 +8,9 @@ import (
 	_ "github.com/lib/pq"
 )
 
+// TODO: Implement transaction and rollback support
+// https://data-nerd.blog/2020/06/07/implementing-transactions-in-postgresql-using-go-lang-database-sql-package/
+
 // Default to localhost
 func Initialize() error {
 	psqlconn := psql.PsqlConnString()

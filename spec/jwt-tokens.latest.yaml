@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: User and Permission 
+  description: A JWT token models 
+
+servers:
+
+security:
+  - BasicAuth: []  
+
+paths: 
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http  
+      scheme: basic
+
+  schemas:
+    Permission:
+      type: object 
+      required:
+        - email
+      properties:
+        email:
+          type: string
+        permission:
+          type: string
+    User:
+      type: object 
+      required:
+        - email
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        
+        

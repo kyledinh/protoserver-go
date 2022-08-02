@@ -47,6 +47,10 @@ docker-up:
 dockder-down:
 	@docker-compose -f docker/local-compose.yaml down -d
 
+gen-models:
+# requires https://github.com/kyledinh/btk-go
+	@btk -gen=models -i ./spec/jwt-tokens.latest.yaml 
+
 lint: 
 	@./scripts/lint.sh
 
