@@ -30,10 +30,17 @@ func StartRouter(ctx context.Context, port int) {
 	mux.Handle("/liveness", logWrapper(livenessHandler)) // TODO: add a heathcheck ie. config.Ready()...
 	mux.Handle("/version", logWrapper(versionHandler))
 
-	// This handler will be deprecated for /vx/ handler
+	// PROTO X HANDLERS
 	mux.Handle("/vx/", logWrapper(handler.VxHandler))
-	mux.Handle("/secure/", authWrapper(logWrapper(handler.VxHandler)))
-	mux.Handle("/secure/heartbeat", authWrapper(logWrapper(heartbeatHandler)))
+
+	// LOGIN/SIGNUP
+	mux.Handle("/v1/login", logWrapper(handler.LoginHandler))
+	mux.Handle("/v1/signup", logWrapper(handler.SignupHandler))
+
+	// ROUTES THAT SECURED BY JWT IN X-Authentication-Header
+	mux.Handle("/v1/user", authJWTWrapper(logWrapper(handler.UserHandler)))
+	mux.Handle("/v1/users", authJWTWrapper(logWrapper(handler.UsersHandler)))
+	mux.Handle("/v1/heartbeat", authJWTWrapper(logWrapper(heartbeatHandler)))
 
 	portStr := fmt.Sprintf(":%d", port)
 	server := &http.Server{

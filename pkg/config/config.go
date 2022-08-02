@@ -34,7 +34,7 @@ func LoadConfig() {
 	viper.SetDefault("serverPort", 8000)
 	viper.SetDefault("serviceName", "protoserver")
 
-	viper.SetDefault("jwtSecret", "SECRETKEY")
+	viper.SetDefault("jwtSecret", "SUPER_SECRET_JWT_KEY")
 	viper.SetDefault("postgresDB", "proto")
 	viper.SetDefault("postgresUser", "postgres")
 	viper.SetDefault("postgresPassword", "postgres")

@@ -23,8 +23,14 @@ analyze:
 	go vet -v cmd/...
 	staticcheck github.com/kyledinh/protoserver-go/cmd/...
 
+build-local:
+	@:./cmd/server/build.sh
+
 check:
 	@./scripts/check.sh
+
+curl-test:
+	@./scripts/dev/test-jwt-token.sh
 
 db-init:
 	@go run ./cmd/cli -migrate initialize
