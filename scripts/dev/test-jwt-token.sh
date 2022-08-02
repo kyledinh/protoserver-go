@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+
+
 JWT_TOKEN=$(
     curl -X POST http://localhost:8000/v1/login  | jq -r '.token'
 )

@@ -26,7 +26,13 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 	case http.MethodGet:
 		// unsupported
 	case http.MethodPost:
-
+		id, err := SignupPost(r)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest) // find better error response
+		} else {
+			w.WriteHeader(http.StatusOK)
+			w.Write([]byte(`{"user":"` + id + `"}`))
+		}
 	case http.MethodPut:
 		// unsupported
 	default:
@@ -35,4 +41,11 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 
 	logger.Info("SignupHandler", zap.String("endpoint", endpoint), zap.String("traceUUID", traceUUID))
 
+}
+
+func SignupPost(r *http.Request) (string, error) {
+	var err error
+	var email string
+
+	return email, err
 }
