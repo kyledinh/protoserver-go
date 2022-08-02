@@ -3,9 +3,10 @@ package macro
 import (
 	"encoding/json"
 	"net/http"
-	"protoserver-go/pkg/model"
-	"protoserver-go/pkg/proto/sys"
 	"time"
+
+	"github.com/kyledinh/protoserver-go/pkg/model"
+	"github.com/kyledinh/protoserver-go/pkg/proto/sys"
 )
 
 func MacrosForRequestBody(macros []string, body []byte) []byte {

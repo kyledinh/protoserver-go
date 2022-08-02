@@ -3,9 +3,9 @@ package proto_test
 import (
 	"bytes"
 	"context"
-	"protoserver-go/pkg/proto"
 	"testing"
 
+	"github.com/kyledinh/protoserver-go/pkg/proto"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

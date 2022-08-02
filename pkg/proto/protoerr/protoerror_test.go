@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"protoserver-go/pkg/proto/protoerr"
+	"github.com/kyledinh/protoserver-go/pkg/proto/protoerr"
 
 	"github.com/stretchr/testify/assert"
 )

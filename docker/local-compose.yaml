@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  # app:
+  #   container_name: proto-app 
+  #   image: kyledinh/protoserver
+  #   security_opt:
+  #     - "seccompu:unconfined"
+  #   cap_add:
+  #     - "SYS_PTRACE"
+  #   deponds_on:
+  #     - db
+  #   ports:
+  #     - 8000:8000
+  #   env_file:
+  #     - ./proto-app.env  
+  db:
+    image: postgres:14.1-alpine
+    container_name: proto-db
+    restart: always
+    environment:
+      - POSTGRES_DB=proto
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local

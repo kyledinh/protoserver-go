@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"protoserver-go/pkg/proto/sys"
 	"strings"
 	"time"
 
+	"github.com/kyledinh/protoserver-go/pkg/proto/sys"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

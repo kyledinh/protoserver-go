@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"protoserver-go/pkg/config"
-	"protoserver-go/pkg/macro"
-	"protoserver-go/pkg/proto"
-	"protoserver-go/pkg/proto/sys"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/kyledinh/protoserver-go/pkg/config"
+	"github.com/kyledinh/protoserver-go/pkg/macro"
+	"github.com/kyledinh/protoserver-go/pkg/proto"
+	"github.com/kyledinh/protoserver-go/pkg/proto/sys"
 
 	"github.com/google/uuid"
 

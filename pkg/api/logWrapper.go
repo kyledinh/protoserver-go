@@ -6,8 +6,9 @@ import (
 	"fmt"
 	"math/rand"
 	"net/http"
-	"protoserver-go/pkg/proto"
-	"protoserver-go/pkg/proto/sys"
+
+	"github.com/kyledinh/protoserver-go/pkg/proto"
+	"github.com/kyledinh/protoserver-go/pkg/proto/sys"
 
 	"go.uber.org/zap"
 )

@@ -7,10 +7,11 @@ import (
 	"log"
 	"math/rand"
 	"os"
-	"protoserver-go/pkg/model"
-	"protoserver-go/pkg/proto"
 	"strings"
 	"time"
+
+	"github.com/kyledinh/protoserver-go/pkg/model"
+	"github.com/kyledinh/protoserver-go/pkg/proto"
 
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -34,9 +35,9 @@ func LoadConfig() {
 	viper.SetDefault("serviceName", "protoserver")
 
 	viper.SetDefault("jwtSecret", "SECRETKEY")
-	viper.SetDefault("postgresDB", "txferry")
-	viper.SetDefault("postgresUser", "admin")
-	viper.SetDefault("postgresPassword", "localpassword")
+	viper.SetDefault("postgresDB", "proto")
+	viper.SetDefault("postgresUser", "postgres")
+	viper.SetDefault("postgresPassword", "postgres")
 
 	viper.SetDefault("authtokens", []string{"PROTOSERVER_DEV_TOKEN", "PROTOSERVER_TEST_TOKEN"})
 	viper.SetDefault("upperLimit", 100)

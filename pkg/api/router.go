@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"strconv"
 
-	"protoserver-go/pkg/config"
-	"protoserver-go/pkg/handler"
-	"protoserver-go/pkg/model"
-	"protoserver-go/pkg/proto"
-	"protoserver-go/pkg/proto/sys"
+	"github.com/kyledinh/protoserver-go/pkg/config"
+	"github.com/kyledinh/protoserver-go/pkg/handler"
+	"github.com/kyledinh/protoserver-go/pkg/model"
+	"github.com/kyledinh/protoserver-go/pkg/proto"
+	"github.com/kyledinh/protoserver-go/pkg/proto/sys"
 
 	"log"
 	"net/http"

@@ -26,9 +26,26 @@ analyze:
 check:
 	@./scripts/check.sh
 
+db-init:
+	@go run ./cmd/cli -migrate initialize
+
+db-ping:
+	@go run ./cmd/cli -migrate ping
+
+db-seed:
+	@go run ./cmd/cli -migrate seed 
+
+
 kube:
 	@./kube/make-builder-container.sh
 	@./kube/make-protoserver-container.sh
+
+docker-up:
+# currently postgres db only for local development
+	@docker-compose -f docker/local-compose.yaml up -d
+
+dockder-down:
+	@docker-compose -f docker/local-compose.yaml down -d
 
 lint: 
 	@./scripts/lint.sh

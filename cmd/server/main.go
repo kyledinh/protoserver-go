@@ -2,9 +2,10 @@ package main
 
 import (
 	"context"
-	"protoserver-go/pkg/api"
-	"protoserver-go/pkg/config"
-	"protoserver-go/pkg/proto"
+
+	"github.com/kyledinh/protoserver-go/pkg/api"
+	"github.com/kyledinh/protoserver-go/pkg/config"
+	"github.com/kyledinh/protoserver-go/pkg/proto"
 
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
