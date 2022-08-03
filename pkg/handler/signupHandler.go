@@ -1,11 +1,18 @@
 package handler
 
 import (
+	"encoding/json"
+	"io/ioutil"
 	"net/http"
 
+	"github.com/kyledinh/protoserver-go/internal/database"
+	"github.com/kyledinh/protoserver-go/internal/hashing"
+	"github.com/kyledinh/protoserver-go/pkg/model"
 	"github.com/kyledinh/protoserver-go/pkg/proto"
+	"github.com/kyledinh/protoserver-go/pkg/proto/protoerr"
 
 	"github.com/google/uuid"
+	"github.com/mrz1836/go-sanitize"
 
 	"go.uber.org/zap"
 )
@@ -45,7 +52,30 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 
 func SignupPost(r *http.Request) (string, error) {
 	var err error
-	var email string
+	var user model.User
 
-	return email, err
+	defer r.Body.Close()
+	body, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		return user.Email, protoerr.ErrParsingRequest
+	}
+
+	if err := json.Unmarshal(body, &user); err != nil {
+		return user.Email, protoerr.ErrParsingRequest
+	}
+
+	user.Email = sanitize.Email(user.Email, false)
+	user.Firstname = sanitize.XSS(user.Firstname)
+	user.Lastname = sanitize.XSS(user.Lastname)
+	user.Password, err = hashing.HashPassword(user.Password)
+	if err != nil {
+		return user.Email, protoerr.ErrHashPassword
+	}
+
+	err = database.InsertNewUser(user)
+	if err != nil {
+		return user.Email, protoerr.ErrApiRequest
+	}
+
+	return user.Email, nil
 }

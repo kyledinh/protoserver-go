@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/kyledinh/protoserver-go/internal/psql"
+	"github.com/kyledinh/protoserver-go/internal/database"
 	_ "github.com/lib/pq"
 )
 
@@ -13,7 +13,7 @@ import (
 
 // Default to localhost
 func Initialize() error {
-	psqlconn := psql.PsqlConnString()
+	psqlconn := database.PsqlConnString()
 
 	// open database
 	db, err := sql.Open("postgres", psqlconn)
@@ -51,7 +51,7 @@ func Initialize() error {
 
 func Ping() error {
 
-	psqlconn := psql.PsqlConnString()
+	psqlconn := database.PsqlConnString()
 
 	// open database
 	db, err := sql.Open("postgres", psqlconn)
@@ -74,7 +74,7 @@ func Ping() error {
 
 func Seed() error {
 
-	psqlconn := psql.PsqlConnString()
+	psqlconn := database.PsqlConnString()
 
 	// open database
 	db, err := sql.Open("postgres", psqlconn)

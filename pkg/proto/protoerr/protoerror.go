@@ -13,6 +13,9 @@ var (
 	ErrCLIAction        = errors.New("CLI_ACTION_FAILED")
 	ErrNotFound         = errors.New("NOT_FOUND")
 	ErrWriteFile        = errors.New("WRITE_FILE_FAILED")
+	ErrHashPassword     = errors.New("HASH_PASSWD_FAILED")
+	ErrParsingRequest   = errors.New("PARSING_REQUEST_FAILED")
+	ErrApiRequest       = errors.New("API_REQUEST_FAILED")
 )
 
 type WrappedError struct {
