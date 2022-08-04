@@ -3,7 +3,7 @@ module github.com/kyledinh/protoserver-go
 go 1.18
 
 require (
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/golang-jwt/jwt/v4 v4.4.2
 	github.com/google/uuid v1.3.0
 	github.com/lib/pq v1.10.6
 	github.com/mrz1836/go-sanitize v1.1.5

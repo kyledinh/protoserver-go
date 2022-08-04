@@ -1,6 +1,5 @@
 #!/bin/bash
-KUBE_DIR=$(pwd)/../../kube
-APP_VERSION=$(cat $KUBE_DIR/sem-version)
+APP_VERSION=$(cat ../../sem-version)
 
 rm protoserverMac
 

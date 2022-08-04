@@ -35,10 +35,12 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 	case http.MethodPost:
 		id, err := SignupPost(r)
 		if err != nil {
-			w.WriteHeader(http.StatusBadRequest) // find better error response
+			w.WriteHeader(http.StatusBadRequest)
+			// find better error response
+			// better response messages for err/failure: duplicate | input error | server error
 		} else {
 			w.WriteHeader(http.StatusOK)
-			w.Write([]byte(`{"user":"` + id + `"}`))
+			w.Write([]byte(`{"created_user":"` + id + `"}`))
 		}
 	case http.MethodPut:
 		// unsupported

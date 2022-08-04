@@ -2,11 +2,16 @@ package handler
 
 import (
 	"context"
+	"encoding/json"
+	"io/ioutil"
 	"net/http"
 	"time"
 
-	"github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt/v4"
+	"github.com/kyledinh/protoserver-go/internal/database"
+	"github.com/kyledinh/protoserver-go/pkg/model"
 	"github.com/kyledinh/protoserver-go/pkg/proto"
+	"github.com/kyledinh/protoserver-go/pkg/proto/protoerr"
 	"github.com/spf13/viper"
 
 	"github.com/google/uuid"
@@ -49,21 +54,30 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 func loginPost(ctx context.Context, r *http.Request) (string, error) {
 	var err error
-	token := "foo-token"
-	email := "kyledinh@email.com"
-	validLogin := true
+	var user model.User
 
-	if validLogin {
-		token, err = createJWT(email)
+	defer r.Body.Close()
+	body, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		return user.Email, protoerr.ErrParsingRequest
 	}
 
-	return token, err
+	if err := json.Unmarshal(body, &user); err != nil {
+		return user.Email, protoerr.ErrParsingRequest
+	}
+
+	validLogin, _ := database.ValidateLogin(user.Email, user.Password)
+	if !validLogin {
+		return user.Email, protoerr.ErrFailedLogin
+	}
+
+	return createJWT(user.Email)
 }
 
 func createJWT(email string) (string, error) {
-	claims := jwt.StandardClaims{
-		ExpiresAt: time.Now().Add(time.Hour).Unix(),
-		Issuer:    email,
+	claims := jwt.RegisteredClaims{
+		ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Hour)),
+		ID:        email,
 	}
 
 	jwtToken := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)

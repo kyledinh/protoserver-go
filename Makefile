@@ -41,7 +41,6 @@ db-ping:
 db-seed:
 	@go run ./cmd/cli -migrate seed 
 
-
 kube:
 	@./kube/make-builder-container.sh
 	@./kube/make-protoserver-container.sh

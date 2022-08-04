@@ -16,6 +16,7 @@ var (
 	ErrHashPassword     = errors.New("HASH_PASSWD_FAILED")
 	ErrParsingRequest   = errors.New("PARSING_REQUEST_FAILED")
 	ErrApiRequest       = errors.New("API_REQUEST_FAILED")
+	ErrFailedLogin      = errors.New("LOGIN_FAILED")
 )
 
 type WrappedError struct {
