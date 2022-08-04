@@ -32,6 +32,9 @@ check:
 curl-test:
 	@./scripts/dev/test-jwt-token.sh
 
+db-users:
+	@go run ./cmd/cli -dbusers
+
 db-init:
 	@go run ./cmd/cli -migrate initialize
 
@@ -40,6 +43,7 @@ db-ping:
 
 db-seed:
 	@go run ./cmd/cli -migrate seed 
+	@go run ./cmd/cli -dbuser kyle@email.com 
 
 kube:
 	@./kube/make-builder-container.sh

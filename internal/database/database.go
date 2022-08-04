@@ -46,9 +46,7 @@ func InsertNewUser(user model.User) error {
 }
 
 func ValidateLogin(email, password string) (bool, error) {
-
 	var dbHash string
-
 	db, err := sql.Open("postgres", PsqlConnString())
 	if err != nil {
 		return false, err
@@ -71,7 +69,6 @@ func ValidateLogin(email, password string) (bool, error) {
 	}
 
 	validLogin := dbHash == userHash
-
 	return validLogin, err
 }
 
@@ -80,12 +77,53 @@ func FetchUserByEmail(email model.User) (model.User, error) {
 		user model.User
 		err  error
 	)
+
+	db, err := sql.Open("postgres", PsqlConnString())
+	if err != nil {
+		return user, err
+	}
+
+	// close database
+	defer db.Close()
+
+	query := fmt.Sprintf("SELECT email, firstname, lastname FROM users WHERE email = '%s'", email.Email)
+
+	row := db.QueryRow(query)
+	err = row.Scan(&user.Email, &user.Firstname, &user.Lastname)
+	if err != nil {
+		return user, err
+	}
+
 	return user, err
 }
 
-func FetchUsers(limit int) ([]model.User, error) {
-	// default limit 0 to mean: fetch all users
+func FetchAllUsers() ([]model.User, error) {
 	var err error
 	users := make([]model.User, 0)
+
+	db, err := sql.Open("postgres", PsqlConnString())
+	if err != nil {
+		return nil, err
+	}
+
+	// close database
+	defer db.Close()
+
+	rows, err := db.Query("SELECT email, firstname, lastname FROM users")
+	if err != nil {
+		return nil, err
+	}
+
+	defer rows.Close()
+	for rows.Next() {
+		var u model.User
+		err = rows.Scan(&u.Email, &u.Firstname, &u.Lastname)
+		if err != nil {
+			return nil, err
+		}
+		users = append(users, u)
+	}
+	// get any error encountered during iteration
+	err = rows.Err()
 	return users, err
 }

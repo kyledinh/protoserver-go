@@ -1,12 +1,16 @@
 package main
 
 import (
+	"bytes"
 	"flag"
+	"fmt"
 	"log"
 	"os"
 
+	"github.com/kyledinh/protoserver-go/internal/database"
 	"github.com/kyledinh/protoserver-go/internal/migration"
 	"github.com/kyledinh/protoserver-go/pkg/config"
+	"github.com/kyledinh/protoserver-go/pkg/model"
 	"github.com/kyledinh/protoserver-go/pkg/proto/protoerr"
 )
 
@@ -20,7 +24,9 @@ func errCheckLogFatal(err error, me *error) {
 func main() {
 
 	// PARSE INPUT
-	migrate := flag.String("migrate", "", "Usage: migrate (ping | initialize | up | down)")
+	migrate := flag.String("migrate", "", "Usage: -migrate (ping | initialize | up | down)")
+	dbUser := flag.String("dbuser", "", "Usage: -dbuser (email)")
+	dbAllUsers := flag.Bool("dbusers", false, "Usage: -dbusers fetches all users")
 
 	flag.Parse()
 	args := flag.Args()
@@ -31,6 +37,28 @@ func main() {
 	)
 
 	config.LoadConfig()
+
+	if *dbAllUsers {
+		var buf bytes.Buffer
+		users, _ := database.FetchAllUsers()
+		for _, user := range users {
+			buf.WriteString(fmt.Sprintf("Email: %s, Firstname: %s, Lastname: %s\n", user.Email, user.Firstname, user.Lastname))
+		}
+		os.Stdout.Write(buf.Bytes())
+		os.Exit(0)
+	}
+
+	if *dbUser != "" { // the email
+		var buf bytes.Buffer
+
+		u := model.User{Email: *dbUser}
+		user, err := database.FetchUserByEmail(u)
+		if err == nil {
+			buf.WriteString(fmt.Sprintf("=== Email: %s, Firstname: %s, Lastname: %s\n", user.Email, user.Firstname, user.Lastname))
+		}
+		os.Stdout.Write(buf.Bytes())
+		os.Exit(0)
+	}
 
 	// MAIN SWITCH
 	if *migrate == "initialize" {

@@ -6,11 +6,27 @@
     "configurations": [
 
         {
-            "name": "CMD Package",
+            "name": "Server",
             "type": "go",
             "request": "launch",
             "mode": "auto",
             "program": "cmd/server"
+        },
+        {
+            "name": "CLI -dbusers ",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "cmd/cli",
+            "args": ["-dbusers"]
+        },
+        {
+            "name": "CLI -dbuser kyle@email.com",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "cmd/cli",
+            "args": ["-dbuser", "kyle@email.com"]
         }
     ]
 }
