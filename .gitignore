@@ -17,6 +17,7 @@ vendor/
 cmd/server/protoserver
 kube/buildArtifacts
 cmd/server/protoserverMac
+.DS_Store
 
 dist/
 
