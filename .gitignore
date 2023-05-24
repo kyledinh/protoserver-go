@@ -16,6 +16,7 @@ ignored/
 vendor/
 cmd/server/protoserver
 kube/buildArtifacts
+cmd/server/protoserverLinux
 cmd/server/protoserverMac
 .DS_Store
 

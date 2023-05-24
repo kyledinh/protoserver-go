@@ -7,7 +7,7 @@ OUTPUT_DIR = ./dist
 
 # Current version of the project.
 GITTAG ?= $(shell git describe --tags --always --dirty)
-SEMVAR ?= $(shell head -n 1 semvar)
+SEMVER ?= $(shell head -n 1 sem-version)
 
 # Golang standard bin directory.
 GOPATH ?= $(shell go env GOPATH)
@@ -24,10 +24,12 @@ analyze:
 	staticcheck github.com/kyledinh/protoserver-go/cmd/...
 
 build-local:
-	@:./cmd/server/build.sh
+	@cd cmd/server/ && ./build.sh
 
 check:
-	@./scripts/check.sh
+	@echo "ENV" && ./scripts/check-env.sh
+	@echo
+	@echo "INSTALLED" && ./scripts/check-installed.sh
 
 curl-test:
 	@./scripts/dev/test-jwt-token.sh
