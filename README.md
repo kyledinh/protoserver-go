@@ -119,6 +119,10 @@ This script will query your local machine for software and their version.
   make check
   ```
 
+### GitHub Codespaces
+
+- https://github.com/codespaces
+
 ### Installation
 
 _The Makefile will provide scripts to install all the local dependencies._
